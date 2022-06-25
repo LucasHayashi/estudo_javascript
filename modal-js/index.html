@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <ul class="menu-lista">
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Sobre</a></li>
+                    <li><a href="#">Contato</a></li>
+                    <li><a href="#" data-modal="abrir">Login</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section class="conteudo">
+            <h1>Bem vindo!</h1>
+            <p>Clique no botão login para testar o <b>modal</b>.</p>
+            <p>Modals são feitos com HTML, CSS e JavaScript</p>
+            <p>Eles são posicionados acima de todas as coisas do documento.</p>
+        </section>
+    </div>
+    <section data-modal="container" class="modal-container">
+        <div class="modal">
+            <button data-modal="fechar" class="fechar">x</button>
+            <form action="#">
+                <label for="email">E-mail:</label>
+                <input type="text">
+                <label for="">Senha:</label>
+                <input type="password">
+                <input type="submit" value="Entrar">
+            </form>
+        </div>
+    </section>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

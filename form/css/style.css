@@ -1,0 +1,22 @@
+#formulario label{
+    display: block; 
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+#formulario input {
+    box-sizing: border-box;
+    border-radius: 3px;
+    margin: 5px 0;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 3px;
+}
+
+#formulario span {
+    display: block;
+}
+
+.invalido {
+    border-color: red;
+}

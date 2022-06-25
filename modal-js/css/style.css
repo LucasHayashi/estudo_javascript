@@ -1,0 +1,52 @@
+@import 'modal.css';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-color: #F2F2F2;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    background-color: #60A917;
+}
+
+.menu-lista {
+    display: flex;
+}
+
+.menu-lista li a{
+    padding: 10px;
+    font-size: 1.3em;
+    color: #FFF;
+}
+
+.menu-lista li a:hover {
+    background-color: #A4C400;
+}
+
+.conteudo {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.conteudo p {
+    line-height: 140%;
+}

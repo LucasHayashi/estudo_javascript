@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History - Javascript</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="menu">
+            <ul>
+                <li><a href="fetch.html">Fetch</a></li>
+                <li><a href="history.html">History</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <section>
+            <h1>History API</h1>
+            <p>Com o History API, conseguir manipular os botões de avançar e voltar de uma página.</p>
+            <p>Também é possível modificar o link da página em tempo real com o pushstate().</p>
+            <h2>Ok! Mas para oque vou usá-lo?</h2>
+            <p>Juntando este método com a API Fetch, é possível chamar/carregar uma página sem precisar recarregá-la!</p>
+            <p>Muito massa não é? A vantagem é que o seu site fica muito mais dinâmico, e durante o carregamento você pode adicionar um <code>preloader</code>.</p>
+            <p>Lembre-se que o tempo de carregamento depende muito do peso da página!</p>
+            <h2>Como utilizar:</h2>
+            <pre>
+                <code>
+window.history; //acessa o objeto com várias propriedades
+window.history.back(); //acessa a página anterior
+window.history.forward() //acessa a próxima página
+
+window.history.pushState(obj, title, url) //permite modificar a url atual do site
+
+//Com o evento popstate é possível executar alguma função ao mudar de página
+//Ele irá funcionar apenas se o pushState estiver disponível
+
+window.addEventListener('popstate', mensagem);
+
+function mensagem(){
+    console.log('Mudou de página!');
+}
+                </code>
+            </pre>
+            <p>Para reforçar este assunto, separei um vídeo do canal dcode!</p>
+            <iframe width="400" height="225" src="https://www.youtube.com/embed/4GqUAaLgpgs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            
+            <div class="post-info">
+                <address class="author">Por <a rel="author">Lucas Hayashi</a></address> 
+                <time pubdate datetime="2021-12-08" title="December 08wed, 2021">em 08/12/2021</time>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <p>Lucas Hayashi - Todos os direitos reservados.</p>
+    </footer>    
+    <script src="js/script.js"></script>
+</body>
+</html>

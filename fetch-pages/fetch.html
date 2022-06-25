@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch - Javascript</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="menu">
+            <ul>
+                <li><a href="fetch.html">Fetch</a></li>
+                <li><a href="history.html">History</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <section>
+            <H1>API Fetch - Javascript</H1>
+            <p>A API Fetch do Javascript, é utilizada para realizar requições HTTP a uma API, página ou arquivo de forma simples, retornando uma promisse.</p>
+            <p>Nos dias de hoje, é mais comum utilizarmos a API Fetch do que o AJAX, devido a sua simplicidade de uso.</p>
+            <p>Utilizando a API gratuita do VIA CEP, temos um exemplo de código que exibe o logradouro / rua do CEP:<b>17010001</b></p>
+            <pre>
+                <code>
+let cep = "17010001";
+const logradouro = fetch(`https://viacep.com.br/ws/${cep}/json/unicode/`)
+                    .then( type => { return type.json(); }  )
+                    .then( body => { console.log(body.logradouro)});
+//Exibe: Rua Batista de Carvalho
+                </code>
+            </pre>
+            <p>A <code>Promisse</code> possui alguns estados:</p>
+            <ul>
+                <li>Pending - É o estado inicial de qualquer promisse, significa que ela ainda não foi resolvida nem rejeitada.</li>
+                <li>Fulfilled  - Houve Sucesso na operação, mas não sinifica que vamos ter um retorno. Pois devemos se atentar aos códigos de status de respostas HTTP:
+                    <ul>
+                        <li>100 - 199 - Informações</li>
+                        <li>200 - 299 - Sucesso</li>
+                        <li>300 - 399 - Redirecionamentos</li>
+                        <li>400 - 499 - Erros client side</li>
+                        <li>500 - 499 - Error server side</li>
+                    </ul>
+                </li>
+                <li>Rejected - Houve uma falha na operação.</li>
+            </ul>
+            <p>Para reforçar este assunto, separei um vídeo do professor Rafael Andre da Origamid!</p>
+            <iframe width="400" height="225" src="https://www.youtube.com/embed/fhIDgAfuJZ8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="post-info">
+                <address class="author">Por <a rel="author">Lucas Hayashi</a></address> 
+                <time pubdate datetime="2021-12-08" title="December 08wed, 2021">em 08/12/2021</time>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <p>Lucas Hayashi - Todos os direitos reservados.</p>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>

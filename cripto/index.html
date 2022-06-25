@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criptomoedas - Preço</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="">Chiliz</a></li>
+                <li><a href="">Bitcoin</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <section class="chiliz-container">
+            <div class="coin-img">
+                <img src="img/chiliz.svg" alt="Chiliz Coin">
+            </div>
+            <div class="coin-info">
+                <h2 class="chz-price">R$ <span></span></h2><br>
+                <h3 class="chz-symbol"><span>CHZBRL</span></h3>
+            </div>
+        </section>
+        <section class="bitcoin-container">
+            <div class="coin-img">
+                <img src="img/bitcoin.svg" alt="Bitcoin Coin">
+            </div>
+            <div class="coin-info">
+                <h2 class="bitcoin-price">R$ <span></span></h2><br>
+                <h3 class="bitcoin-symbol"><span>BTCBRL</span></h3>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <p>Todos os direitos reservados - Lucas Hayashi / Mateus Lopes / Henrique Meirelles</p>
+    </footer>
+</body>
+
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+
+$(document).ready(function(){
+    var criptomoedas = ['CHZBRL','BTCBRL'];
+    function teste(){
+    setTimeout(function(){
+            criptomoedas.forEach( function(item){
+            $.ajax({
+                url: "https://api.binance.com/api/v3/ticker/price?symbol="+item+"",
+                dataType: 'json',
+                success: function(data){
+                    if (item == 'CHZBRL'){
+                        $('.chz-price span').text(+data.price);
+                    }else {
+                        $('.bitcoin-price span').text(+data.price);
+                    };
+                }
+            });
+        })
+        teste();
+    },1200)
+}
+teste();
+});
+
+
+
+
+</script>
+
+</html>

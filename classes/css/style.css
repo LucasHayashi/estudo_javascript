@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f2f2f2;
+}
+
+.main-container {
+    display: block;
+    min-height: 60vh;
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.main-container h2 {
+    font-family: 'Roboto', sans-serif;
+    color: #177476;
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+.main-container p {
+    font-family: 'Roboto', sans-serif;
+    line-height: 150%;
+    font-size: 1.2em;
+    letter-spacing: -0.003em;
+    color: rgba(41, 41, 41, 1);
+}
+
+.sale-container {
+    display: flex;
+    max-width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 350px;
+    background-image: url("../img/background.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: 50% 40%;
+}
+
+.countdown {
+    display: flex;
+}
+
+.timer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 100px;
+    background-color: rgba(255, 255, 255, .6);
+    margin: 0 20px;
+    border-radius: 3px;
+    position: relative;
+    box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, .1);
+}
+
+.timer small {
+    text-transform: uppercase;
+    font-size: 1em;
+    color: #177476;
+    font-weight: bold;
+}
+
+.timer span {
+    font-size: 3em;
+    color: #177476;
+}
+
+.sale-title h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 5em;
+    color: #fff;
+    display: block;
+}
+
+@media only screen and (max-width: 560px) {
+    .sale-title h1{
+        font-size: 3.5em;
+    }
+
+    .timer {
+        width: 60px;
+    }
+
+    .timer small {
+        font-size: 0.6em;
+    }
+
+    .timer span {
+        font-size: 2em;
+    }
+  }
+
+  .footer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 50px;
+      background-color: #177476;
+  }
+
+  .footer p {
+    font-family: 'Roboto', sans-serif;
+    line-height: 150%;
+    letter-spacing: -0.003em;
+    color: #fff;
+  }
