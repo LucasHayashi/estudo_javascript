@@ -8,73 +8,63 @@ body {
     background-color: #F2F2F2;
 }
 
-header, footer  {
-    display: flex;
-    height: 100px;
-    align-items: center;
-    justify-content: center;
-    background-color: #293B5F;
-    
-}
-
-footer p {
-    color: #DBE6FD;
-}
-
-header nav ul {
-    display: flex;
-    list-style: none;
-    margin: 20px;
-}
-
-header nav ul li {
-    padding: 20px;
-}
-
-header nav ul li:hover{
-    background-color: #47597E;
-}
-
-header nav ul li a {
-    text-decoration: none;
-    padding: 10px;
-    color: #DBE6FD;
-    font-size: 1.3em;
-}
-
 .container {
     max-width: 960px;
     margin: 0 auto;
+    padding: 20px;
+    color: #FFF;
 }
 
-.chiliz-container,
-.bitcoin-container {
-    display: flex;
-    height: 400px;
-    align-items: center;
-    background-color:#F2F2F2;
-}
-
-.coin-info, .coin-img {
+.ticker-info {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    padding: 20px;
+    gap: 20px;
+    background-color: #47597E;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.ticker-container {
+    display: flex;
+    justify-content: center;
     align-items: center;
-    width: 50%;
-} 
+    flex-wrap: wrap;
+    margin-top: 20px;
+    padding: 20px;
+    gap: 20px;
+    background-color: #47597E;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.ticker {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #323E58;
+}
+
+.ticker-price {
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.ticker-image {
+    height: 128px;
+}
 
 img {
     display: block;
-    width: 200px;
-}
-
-.chz-price, .bitcoin-price {
-    font-weight: bold;
-    font-size: 2.5em;
-    color: #47597E;
-}
-
-.chz-symbol, .bitcoin-symbol {
-    font-weight: bold;
-    font-size: 2em;
-    color: #47597E;
+    width: 100%;
+    height: 100%;
 }

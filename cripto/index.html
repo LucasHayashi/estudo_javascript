@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,69 +11,62 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="">Chiliz</a></li>
-                <li><a href="">Bitcoin</a></li>
-            </ul>
-        </nav>
-    </header>
     <div class="container">
-        <section class="chiliz-container">
-            <div class="coin-img">
-                <img src="img/chiliz.svg" alt="Chiliz Coin">
-            </div>
-            <div class="coin-info">
-                <h2 class="chz-price">R$ <span></span></h2><br>
-                <h3 class="chz-symbol"><span>CHZBRL</span></h3>
-            </div>
-        </section>
-        <section class="bitcoin-container">
-            <div class="coin-img">
-                <img src="img/bitcoin.svg" alt="Bitcoin Coin">
-            </div>
-            <div class="coin-info">
-                <h2 class="bitcoin-price">R$ <span></span></h2><br>
-                <h3 class="bitcoin-symbol"><span>BTCBRL</span></h3>
-            </div>
-        </section>
+        <div class="ticker-info">
+            <h1>Preço de Criptomoedas em USDT</h1>
+            <p>Atualizado a cada 5 segundos</p>
+        </div>
+        <div class="ticker-container"></div>
     </div>
-    <footer>
-        <p>Todos os direitos reservados - Lucas Hayashi / Mateus Lopes / Henrique Meirelles</p>
-    </footer>
 </body>
 
 <script src="js/jquery-3.6.0.min.js"></script>
 <script>
+    const tickerContainer = $(".ticker-container");
+    const tickers = ["CHZUSDT", "BTCUSDT", "ETHUSDT", "SOLUSDT", "XRPUSDT", "DOGEUSDT", "GRTUSDT", "TIAUSDT"];
+    const tickerImages = {
+        CHZUSDT: "chiliz.svg",
+        BTCUSDT: "bitcoin.svg",
+        ETHUSDT: "ethereum.svg",
+        SOLUSDT: "solana.svg",
+        XRPUSDT: "xrp.svg",
+        DOGEUSDT: "doge.svg",
+        GRTUSDT: "grt.svg",
+        TIAUSDT: "tia.svg"
+    };
 
-$(document).ready(function(){
-    var criptomoedas = ['CHZBRL','BTCBRL'];
-    function teste(){
-    setTimeout(function(){
-            criptomoedas.forEach( function(item){
-            $.ajax({
-                url: "https://api.binance.com/api/v3/ticker/price?symbol="+item+"",
-                dataType: 'json',
-                success: function(data){
-                    if (item == 'CHZBRL'){
-                        $('.chz-price span').text(+data.price);
-                    }else {
-                        $('.bitcoin-price span').text(+data.price);
-                    };
+    function loadPrices() {
+        $.ajax({
+            url: `https://api.binance.com/api/v3/ticker/price?symbols=${encodeURIComponent(JSON.stringify(tickers))}`,
+            dataType: 'json',
+            success: (data) => {
+                if (data) {
+                    const tickerHtml = data.map(({ symbol, price }) => `
+                        <div class="ticker">
+                            <h3>${symbol}</h3>
+                            <div class="ticker-image">
+                                <img src="img/${tickerImages[symbol]}" alt="${symbol}">
+                            </div>
+                            <span class="ticker-price" id="${symbol}">${Number(price).toFixed(3)}</span>
+                        </div>
+                    `).join('');
+
+                    tickerContainer.html(tickerHtml);
                 }
-            });
-        })
-        teste();
-    },1200)
-}
-teste();
-});
+            }
+        });
+    }
 
+    function startInterval() {
+        loadPrices();
+        setInterval(loadPrices, 5000);
+    }
 
-
-
+    $(document).ready(() => {
+        startInterval();
+    });
 </script>
 
 </html>
