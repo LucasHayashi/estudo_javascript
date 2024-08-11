@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,14 +13,24 @@
 </head>
 
 <body>
-    <form action="#" id="formulario">
-        <label for="usuario">Usuário:</label>
-            <input type="text" name="usuario" id="usuario" required>
-            <span class="erro"></span>
-        <label for="email">Email:</label>
-            <input type="email" name="email" id="email" required>
-            <span class="erro"></span>
-    </form>
+    <div class="container">
+        <div id="valores">Interaja com os campos</div>
+        <form action="#" id="formulario">
+            <div class="form-group">
+                <label for="usuario">Usuário<span class="obg">*</span></label>
+                <input type="text" name="usuario" id="usuario" required>
+                <small class="erro"></small>
+            </div>
+            <div class="form-group">
+                <label for="email">Email<span class="obg">*</span></label>
+                <input type="email" name="email" id="email" required>
+                <small class="erro"></small>
+            </div>
+            <button type="button" id="btnEnviar">Validar</button>
+        </form>
+        <div id="resultado">Resultado da validação</div>
+    </div>
     <script src="js/script.js"></script>
 </body>
+
 </html>
