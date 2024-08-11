@@ -3,7 +3,12 @@
 import * as func from "./funcoes.js";
 
 let nome = "Lucas";
+let carrosContainer = document.getElementById("carrosContainer");
 
+/* Funções de console */
 func.exibeNome(nome);
 
 func.exibeCarros();
+
+/* Função de DOM */
+func.adicionaCarros(carrosContainer);
