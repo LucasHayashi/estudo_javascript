@@ -6,6 +6,7 @@
 
 body {
     background-color: #f2f2f2;
+    font-family: 'Roboto', sans-serif;
 }
 
 .main-container {
@@ -17,14 +18,12 @@ body {
 }
 
 .main-container h2 {
-    font-family: 'Roboto', sans-serif;
     color: #177476;
     font-size: 2em;
     margin-bottom: 15px;
 }
 
 .main-container p {
-    font-family: 'Roboto', sans-serif;
     line-height: 150%;
     font-size: 1.2em;
     letter-spacing: -0.003em;
@@ -39,7 +38,7 @@ body {
     align-items: center;
     height: 350px;
     background-image: url("../img/background.jpg");
-    background-size:cover;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 40%;
 }
@@ -80,8 +79,31 @@ body {
     display: block;
 }
 
+.btn,
+input,
+#data_fim {
+    cursor: pointer;
+    padding: 10px;
+    font-size: 1.2em;
+    letter-spacing: -0.003em;
+    color: rgba(41, 41, 41, 1);
+    margin-bottom: 15px;
+}
+
+.btn-iniciar {
+    background-color: #177476;
+    color: #fff;
+    border: none;
+}
+
+.btn-parar {
+    background-color: #753A16;
+    color: #fff;
+    border: none;
+}
+
 @media only screen and (max-width: 560px) {
-    .sale-title h1{
+    .sale-title h1 {
         font-size: 3.5em;
     }
 
@@ -96,19 +118,19 @@ body {
     .timer span {
         font-size: 2em;
     }
-  }
+}
 
-  .footer {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 50px;
-      background-color: #177476;
-  }
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    background-color: #177476;
+}
 
-  .footer p {
+.footer p {
     font-family: 'Roboto', sans-serif;
     line-height: 150%;
     letter-spacing: -0.003em;
     color: #fff;
-  }
+}

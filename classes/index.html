@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Countdown</title>
-    <link rel="stylesheet" href="css/style.css"><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <div class="sale-container">
         <div class="sale-title">
@@ -37,15 +40,24 @@
         </div>
     </div>
     <div class="main-container">
-        <h2>Conteudo do site</h2>
-        <p>Chocolate bar shortbread pudding pie brownie chocolate. Tiramisu jelly beans toffee apple pie halvah. Carrot cake icing brownie cupcake chocolate cake.
-            Cheesecake candy canes donut cupcake chocolate bar jelly beans danish carrot cake. Jelly muffin sugar plum chocolate cake cake jujubes cotton candy. Soufflé dragée oat cake dragée cookie donut bear claw cupcake tart. Dessert powder cotton candy toffee jelly beans donut chocolate cake.
-            Topping caramels soufflé tart croissant apple pie sesame snaps. Jujubes tiramisu jelly candy brownie muffin. Marzipan chocolate bar candy cake donut macaroon shortbread oat cake gingerbread.</p>
-
+        <div class="data_fim">
+            <h2>Selecione a data fim da promoção</h2>
+            <input type="datetime-local" name="data_fim" id="data_fim">
+            <div class="actions">
+                <button type="button" class="btn btn-iniciar" id="btnIniciar">Iniciar</button>
+                <button type="button" class="btn btn-parar" id="btnParar">Parar</button>
+            </div>
+        </div>
+        <h2>Aproveite nossa promoção</h2>
+        <p>Aproveite a nossa incrível promoção de verão para aulas de surf! Durante todo o verão, oferecemos pacotes com
+            descontos especiais para todos os níveis, desde iniciantes até surfistas avançados. Aprenda a pegar ondas
+            com nossos instrutores experientes em praias paradisíacas, enquanto desfruta do melhor clima da estação.
+            Inscreva-se agora e garanta sua vaga para uma experiência inesquecível nas ondas!</p>
     </div>
     <div class="footer">
         <p>Desenvolvido por Lucas Hayashi</p>
     </div>
     <script type="module" src="js/script.js"></script>
 </body>
+
 </html>
